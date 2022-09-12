@@ -5,11 +5,11 @@ import 'package:flutter_components/screens/screens.dart';
 class AppRouter {
   static const initialRoute = 'home';
   static final menuoptions = <MenuOptions>[
-    MenuOptions(
+    /*MenuOptions(
         route: "home",
         icon: Icons.account_balance,
         name: "Home Screen",
-        screen: const HomeScreen()),
+        screen: const HomeScreen()),*/
     MenuOptions(
         route: "listview1",
         icon: Icons.account_balance,
@@ -29,12 +29,23 @@ class AppRouter {
         route: "card",
         icon: Icons.credit_card,
         name: "targetas",
-        screen: const CardScreen())
+        screen: const CardScreen()),
+    MenuOptions(
+        route: "avatar",
+        icon: Icons.supervised_user_circle_outlined,
+        name: "Circle Avatar",
+        screen: const AvatarScreen()),
+    MenuOptions(
+        route: "animate",
+        icon: Icons.play_circle_outline_rounded,
+        name: "Animate Container",
+        screen: const AnimateScreen())
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
     Map<String, Widget Function(BuildContext)> appRoutes = {};
     for (final option in menuoptions) {
+      appRoutes.addAll({"home": (BuildContext context) => const HomeScreen()});
       appRoutes.addAll({option.route: (BuildContext context) => option.screen});
     }
     return appRoutes;

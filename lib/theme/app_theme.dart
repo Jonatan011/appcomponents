@@ -13,8 +13,20 @@ class AppTheme {
   static final ThemeData lightTheme = ThemeData.light().copyWith(
       //color primario
       primaryColor: primaryColor,
+
       //appbartheme
       appBarTheme: const AppBarTheme(color: primaryColor, elevation: 5),
       textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom(foregroundColor: primaryColor)));
+          style: TextButton.styleFrom(foregroundColor: primaryColor)),
+
+      //floating button theme
+      floatingActionButtonTheme:
+          const FloatingActionButtonThemeData(backgroundColor: primaryColor),
+
+      //elevateButtons
+      elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.teal,
+              shape: const StadiumBorder(),
+              elevation: 3)));
 }
